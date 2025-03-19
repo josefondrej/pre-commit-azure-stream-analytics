@@ -1,15 +1,11 @@
 # ASA Auth Mode
 
-A pre-commit/post-commit hook utility for managing Azure Synapse Analytics authentication modes in JSON configuration
-files.
+In Azure Stream Analytics it is not possible to test the Job locally in VSCode when using the `Msi` authentication mode,
+this can only be done with the `ConnectionString` authentication mode. This utility automatically converts between the
+two modes in JSON files within your repository when committing changes.
 
-## Overview
-
-This utility automatically converts between `ConnectionString` and `Msi` authentication modes in JSON files within your
-repository. It's designed to be used with pre-commit and post-commit hooks to ensure that:
-
-1. Before committing: All JSON files are converted to use `Msi` authentication
-2. After committing: Files are converted back to `ConnectionString` for local development
+Before commit, it converts all `ConnectionString` to `Msi` and after commit, it converts all `Msi` back to
+`ConnectionString`.
 
 ## Usage
 
