@@ -28,6 +28,7 @@ This tool is designed to be used as a pre-commit and post-commit hook. To integr
            name: ASA Auth Mode (Pre-commit)
            description: Converts ConnectionString to Msi before committing
            language: python
+           stages: [ pre-commit ]
            pass_filenames: false
            always_run: true
          
