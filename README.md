@@ -18,7 +18,7 @@ This tool is designed to be used as a pre-commit and post-commit hook. To integr
    pip install pre-commit
    ```
 
-2. Add the following to your `.pre-commit-config.yaml` file:
+2. Create `.pre-commit-config.yaml` file and add the following configuration:
    ```yaml
    repos:
      - repo: https://github.com/josefondrej/pre-commit-azure-stream-analytics
