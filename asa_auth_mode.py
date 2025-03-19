@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 import argparse
-import glob
 import json
 import os
 import sys
@@ -10,6 +9,7 @@ from typing import Dict, List, Tuple, Union, Optional, Any
 def find_all_json_files(directory: str = ".") -> List[str]:
     """
     Find all JSON files in the repository.
+    Except files that have LocalRunOutputs on their path.
 
     Args:
         directory: Base directory to search from
@@ -17,7 +17,12 @@ def find_all_json_files(directory: str = ".") -> List[str]:
     Returns:
         List of paths to JSON files
     """
-    return glob.glob(f"{directory}/**/*.json", recursive=True)
+    json_files = list()
+    for root, _, files in os.walk(directory):
+        for file in files:
+            if file.endswith('.json') and "LocalRunOutputs" not in root:
+                json_files.append(os.path.join(root, file))
+    return json_files
 
 
 def detect_indentation(content: str) -> int:
