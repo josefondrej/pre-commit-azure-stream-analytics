@@ -35,14 +35,14 @@ This tool is designed to be used as a pre-commit and post-commit hook. To integr
            name: ASA Auth Mode (Post-commit)
            description: Converts Msi to ConnectionString after committing
            language: python
-           stages: [post-commit]
+           stages: [post-commit, post-checkout]
            pass_filenames: false
            always_run: true
    ```
 
 3. Install the pre-commit hooks:
    ```bash
-   pre-commit install --hook-type pre-commit --hook-type post-commit
+   pre-commit install --hook-type pre-commit --hook-type post-commit --hook-type post-checkout
    ```
 
 4. Now, whenever you commit:
