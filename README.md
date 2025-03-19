@@ -50,6 +50,12 @@ This tool is designed to be used as a pre-commit and post-commit hook. To integr
       committing
     - The post-commit hook will convert them back to `ConnectionString` for your local development environment
 
+5. You can also trigger the hooks manually:
+   ```bash
+   pre-commit run --hook-stage pre-commit
+   pre-commit run --hook-stage post-commit
+   ```
+
 ## How It Works
 
 The utility:
