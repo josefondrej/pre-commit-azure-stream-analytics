@@ -22,7 +22,7 @@ This tool is designed to be used as a pre-commit and post-commit hook. To integr
    ```yaml
    repos:
      - repo: https://github.com/josefondrej/pre-commit-azure-stream-analytics
-       rev: v0.1.0
+       rev: v0.2.0
        hooks:
          - id: asa-auth-mode-pre
            name: ASA Auth Mode (Pre-commit)
