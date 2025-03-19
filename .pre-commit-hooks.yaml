@@ -1,0 +1,16 @@
+- id: asa-auth-mode-pre
+  name: ASA Auth Mode (Pre-commit)
+  description: Converts ConnectionString to Msi before committing
+  entry: asa-auth-mode --direction ConnectionString2Msi
+  language: python
+  pass_filenames: false
+  always_run: true
+
+- id: asa-auth-mode-post
+  name: ASA Auth Mode (Post-commit)
+  description: Converts Msi to ConnectionString after committing
+  entry: asa-auth-mode --direction Msi2ConnectionString
+  language: python
+  stages: [ post-commit ]
+  pass_filenames: false
+  always_run: true
