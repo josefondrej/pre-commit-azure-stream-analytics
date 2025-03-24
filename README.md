@@ -48,7 +48,7 @@ This tool is designed to be used as a pre-commit and post-commit hook. To integr
 
 4. Now, whenever you commit:
     - The pre-commit hook will automatically convert all `AuthenticationMode` from `ConnectionString` to `Msi` before
-      committing
+      committing (first it does this conversion and fails the commit, so you have to commit again)
     - The post-commit hook will convert them back to `ConnectionString` for your local development environment
 
 5. You can also trigger the hooks manually:
